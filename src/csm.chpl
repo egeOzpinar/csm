@@ -1,4 +1,6 @@
-/* Documentation for csm */
+/*
+csm - Chapel Statistics Module is a statistics module for Chapel which has statistics functions.
+*/
 module csm {
 
   /* Mean function for var args */

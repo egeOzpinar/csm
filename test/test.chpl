@@ -63,4 +63,31 @@ proc test_geometric_mean_array(test: borrowed Test) throws {
   test.assertGreaterThan(geometric_mean(a)-2.78316,-0.00001);
 }
 
+proc test_harmonic_mean_int(test: borrowed Test) throws {
+  test.assertLessThan(harmonic_mean(5,6,7)-5.88785,0.00001);
+  test.assertGreaterThan(harmonic_mean(5,6,7)-5.88785,-0.00001);
+}
+
+proc test_harmonic_mean_real64(test: borrowed Test) throws {
+  test.assertLessThan(harmonic_mean(5.0,6.0,7.0)-5.88785,0.00001);
+  test.assertGreaterThan(harmonic_mean(5.0,6.0,7.0)-5.88785,-0.00001);
+}
+
+proc test_harmonic_mean_real32(test: borrowed Test) throws {
+  var a: real(32) = 5;
+  var b: real(32) = 6;
+  var c: real(32) = 7;
+  test.assertLessThan(harmonic_mean(a,b,c)-5.88785,0.00001);
+  test.assertGreaterThan(harmonic_mean(a,b,c)-5.88785,-0.00001);
+}
+
+proc test_harmonic_mean_array(test: borrowed Test) throws {
+  var a: [1..3] real;
+  a(1)=5.0;
+  a(2)=6.0;
+  a(3)=7.0;
+  test.assertLessThan(harmonic_mean(a)-5.88785,0.00001);
+  test.assertGreaterThan(harmonic_mean(a)-5.88785,-0.00001);
+}
+
 UnitTest.main();

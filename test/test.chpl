@@ -63,16 +63,19 @@ proc test_geometric_mean_array(test: borrowed Test) throws {
   test.assertGreaterThan(geometric_mean(a)-2.78316,-0.00001);
 }
 
+/* Harmonic mean function test for integer var args */
 proc test_harmonic_mean_int(test: borrowed Test) throws {
   test.assertLessThan(harmonic_mean(5,6,7)-5.88785,0.00001);
   test.assertGreaterThan(harmonic_mean(5,6,7)-5.88785,-0.00001);
 }
 
+/* Harmonic mean function test for real(64) var args */
 proc test_harmonic_mean_real64(test: borrowed Test) throws {
   test.assertLessThan(harmonic_mean(5.0,6.0,7.0)-5.88785,0.00001);
   test.assertGreaterThan(harmonic_mean(5.0,6.0,7.0)-5.88785,-0.00001);
 }
 
+/* Harmonic mean function test for real(32) var args */
 proc test_harmonic_mean_real32(test: borrowed Test) throws {
   var a: real(32) = 5;
   var b: real(32) = 6;
@@ -81,6 +84,7 @@ proc test_harmonic_mean_real32(test: borrowed Test) throws {
   test.assertGreaterThan(harmonic_mean(a,b,c)-5.88785,-0.00001);
 }
 
+/* Harmonic mean function test for arrays */
 proc test_harmonic_mean_array(test: borrowed Test) throws {
   var a: [1..3] real;
   a(1)=5.0;

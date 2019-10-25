@@ -26,11 +26,13 @@ proc test_mean_array(test: borrowed Test) throws {
   test.assertEqual(mean(B),10);
 }
 
+/* Geometric mean function test for integer var args */
 proc test_geometric_mean_int(test: borrowed Test) throws {
   test.assertLessThan(geometric_mean(1,2,3,10)-2.78316,0.00001);
   test.assertGreaterThan(geometric_mean(1,2,3,10)-2.78316,-0.00001);
 }
 
+/* Geometric mean function test for real(64) var args */
 proc test_geometric_mean_real64(test: borrowed Test) throws {
   var a:real(64) = 1;
   var b:real(64) = 2;
@@ -40,6 +42,7 @@ proc test_geometric_mean_real64(test: borrowed Test) throws {
   test.assertGreaterThan(geometric_mean(a,b,c,d)-2.78316,-0.00001);
 }
 
+/* Geometric mean function test for real(32) var args */
 proc test_geometric_mean_real32(test: borrowed Test) throws {
   var a:real(32) = 1;
   var b:real(32) = 2;
@@ -49,6 +52,7 @@ proc test_geometric_mean_real32(test: borrowed Test) throws {
   test.assertGreaterThan(geometric_mean(a,b,c,d)-2.78316,-0.00001);
 }
 
+/* Geometric mean function test for arrays */
 proc test_geometric_mean_array(test: borrowed Test) throws {
   var a:[1..4] real(64);
   a(1)=1.0;

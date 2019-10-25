@@ -94,4 +94,38 @@ proc test_harmonic_mean_array(test: borrowed Test) throws {
   test.assertGreaterThan(harmonic_mean(a)-5.88785,-0.00001);
 }
 
+/* Median function test for integer var args */
+proc test_median_int(test: borrowed Test) throws {
+  test.assertEqual(median(1,6,2,8,3,4,4), 4);
+  test.assertEqual(median(1,6,2,8,3,4), 3.5);
+}
+
+/* Median function test for real(64) var args */
+proc test_median_real64(test: borrowed Test) throws {
+  test.assertEqual(median(1.3,2.1,5.6,5.3,4.8), 4.8);
+  test.assertEqual(median(1.3,2.1,5.6,5.3,4.8,10.7), 5.05);
+}
+
+/* Median function test for real(32) var args */
+proc test_median_real32(test: borrowed Test) throws {
+  var x:real(32) = 1.3;
+  var y:real(32) = 2.1;
+  var z:real(32) = 5.6;
+  var t:real(32) = 5.3;
+  var r:real(32) = 4.8;
+  var p:real(32) = 10.7;
+  var eq:real(32) = 4.8;
+  var eq1:real(32) = 5.05;
+  test.assertEqual(median(x,y,z,t,r), eq);
+  test.assertEqual(median(x,y,z,t,r,p), eq1);
+}
+
+/* Median function test for arrays */
+proc test_median_array(test: borrowed Test) throws {
+  var arr = [1.3,2.1,5.6,5.3,4.8];
+  var arr1 = [1.3,2.1,5.6,5.3,4.8,10.7];
+  test.assertEqual(median(arr), 4.8);
+  test.assertEqual(median(arr1), 5.05);
+}
+
 UnitTest.main();

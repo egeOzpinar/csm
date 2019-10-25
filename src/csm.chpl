@@ -1,7 +1,9 @@
 /*
 csm - Chapel Statistics Module is a statistics module for Chapel which has statistics functions.
 */
+
 module csm {
+  use Sort;
 
   /* Mean function for var args */
   proc mean(args: int ...?n) {
@@ -99,4 +101,56 @@ module csm {
     return X.size/sum;
   }
 
+  /* Median function for integer var args */
+  proc median(args: int ...?n) {
+    var A: [1..n] int;
+    for i in 1..n {
+      A[i] = args(i);
+    }
+    sort(A);
+    if(n%2==1) then return A[n/2+1];
+    else{
+      var i=n/2;
+      return (A[i] + A[i+1])/2.0;
+    }
+  }
+
+  /* Median function for real(64) var args */
+  proc median(args: real(64) ...?n) {
+    var A: [1..n] real(64);
+    for i in 1..n {
+      A[i] = args(i);
+    }
+    sort(A);
+    if(n%2==1) then return A[n/2+1];
+    else{
+      var i=n/2;
+      return (A[i] + A[i+1])/2.0;
+    }
+  }
+
+  /* Median function for real(32) var args */
+  proc median(args: real(32) ...?n) {
+    var A: [1..n] real(32);
+    for i in 1..n {
+      A[i] = args(i);
+    }
+    sort(A);
+    if(n%2==1) then return A[n/2+1];
+    else{
+      var i=n/2;
+      return (A[i] + A[i+1])/2.0;
+    }
+  }
+
+  /* Median function for arrays */
+  proc median(X: [?D] real) {
+    sort(X);
+    var n = X.size;
+    if(n%2==1) then return X[n/2+1];
+    else{
+      var i=n/2;
+      return (X[i] + X[i+1])/2.0;
+    }
+  }
 }

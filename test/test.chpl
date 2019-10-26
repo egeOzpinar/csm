@@ -33,6 +33,14 @@ proc test_mean_array_int(test: borrowed Test) throws {
   test.assertEqual(mean(B),10);
 }
 
+/* mean function test for real(32) arrays */
+proc test_mean_array_real32(test: borrowed Test) throws {
+  var B: [1..10] real(32);
+  B[1]=100.0;
+  var eq: real(32) = 10.0;
+  test.assertEqual(mean(B), eq);
+}
+
 /* Geometric mean function test for integer var args */
 proc test_geometric_mean_int(test: borrowed Test) throws {
   test.assertLessThan(geometric_mean(1,2,3,10)-2.78316,0.00001);
@@ -147,12 +155,11 @@ proc test_variance_real64(test: borrowed Test) throws {
 
 /* Variance function test for real(32) var args */
 proc test_variance_real32(test: borrowed Test) throws {
-  var a,b,c,d,eq: real(32);
-  a = 5.0;
-  b = 8.0;
-  c = 10.0;
-  d = 21.0;
-  eq = 36.5;
+  var a: real(32) = 5.0;
+  var b: real(32) = 8.0;
+  var c: real(32) = 10.0;
+  var d: real(32) = 21.0;
+  var eq: real(32) = 36.5;
   test.assertEqual(variance(a,b,c,d), eq);
 }
 

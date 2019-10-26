@@ -29,9 +29,17 @@ module csm {
     return sum:real(32)/n;
   }
 
-  /* Mean function for arrays */
+  /* Mean function for real(64) arrays */
   proc mean(X: [?D] real) {
     var sum: real;
+    for i in X.domain do
+      sum+=X(i);
+    return sum:real/X.size;
+  }
+
+  /* Mean function for integer arrays */
+  proc mean(X: [?D] int) {
+    var sum: int;
     for i in X.domain do
       sum+=X(i);
     return sum:real/X.size;
@@ -154,3 +162,4 @@ module csm {
     }
   }
 }
+

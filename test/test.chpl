@@ -153,7 +153,7 @@ proc test_variance_real32(test: borrowed Test) throws {
   c = 10.0;
   d = 21.0;
   eq = 36.5;
-  test.assertEqual(variance(5.0,8.0,10.0,21.0), eq);
+  test.assertEqual(variance(a,b,c,d), eq);
 }
 
 /* Variance function test for arrays */

@@ -45,6 +45,14 @@ module csm {
     return sum:real/X.size;
   }
 
+  /* Mean function for real(32) arrays */
+  proc mean(X: [?D] real(32)) {
+    var sum: real(32);
+    for i in X.domain do
+      sum+=X(i);
+    return sum:real/X.size;
+  }
+
   /* Geometric mean function for integer var args */
   proc geometric_mean(args: int ...?n): real(64) {
     var mul = 1;
@@ -197,9 +205,9 @@ module csm {
       A[i] = args(i);
     }
     var m = mean(A);
-    var vr = 0.0;
+    var vr:real(32);
     for i in A.domain {
-      vr += (m-A(i))**2;
+      vr += (m-A(i)):real(32)**2;
     }
     return vr/n;
   }

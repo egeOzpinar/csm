@@ -19,9 +19,16 @@ proc test_mean_args_real32(test: borrowed Test) throws {
   test.assertEqual(mean(num1,num2),equal);
 }
 
-/* mean function test for arrays */
-proc test_mean_array(test: borrowed Test) throws {
+/* mean function test for real(64) arrays */
+proc test_mean_array_real64(test: borrowed Test) throws {
   var B: [1..10] real;
+  B[1]=100;
+  test.assertEqual(mean(B),10);
+}
+
+/* Mean function test for integer arrays */
+proc test_mean_array_int(test: borrowed Test) throws {
+  var B: [1..10] int;
   B[1]=100;
   test.assertEqual(mean(B),10);
 }

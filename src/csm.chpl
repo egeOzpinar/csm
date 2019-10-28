@@ -170,6 +170,47 @@ module csm {
     }
   }
 
+  /* Return the low median of int args */
+  proc median_low(args: int ...?n) {
+    var A: [1..n] int;
+    for i in 1..n {
+      A[i] = args(i);
+    }
+    sort(A);
+    if(n%2==1) then return A[n/2+1];
+    else return A[n/2];
+  }
+
+  /* Return the low median of real(64) args */
+  proc median_low(args: real(64) ...?n) {
+    var A: [1..n] real(64);
+    for i in 1..n {
+      A[i] = args(i);
+    }
+    sort(A);
+    if(n%2==1) then return A[n/2+1];
+    else return A[n/2];
+  }
+
+  /* Return the low median of real(32) args */
+  proc median_low(args: real(32) ...?n) {
+    var A: [1..n] real(32);
+    for i in 1..n {
+      A[i] = args(i);
+    }
+    sort(A);
+    if(n%2==1) then return A[n/2+1];
+    else return A[n/2];
+  }
+
+  /* Return the low median of real(64) array */
+  proc median_low(X: [?D] real) {
+    sort(X);
+    var n = X.size;
+    if(n%2==1) then return X[n/2+1];
+    else return X[n/2];
+  }
+  
   /* Variance function for integer var args */
   proc variance(args: int ...?n) {
     var A: [1..n] int;
@@ -222,5 +263,3 @@ module csm {
     return vr/X.size;
   }
 }
-
-

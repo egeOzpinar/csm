@@ -211,6 +211,43 @@ module csm {
     else return X[n/2];
   }
   
+  /* Return the high median of integer var args */
+  proc median_high(args: int ...?n) {
+    var A: [1..n] int;
+    for i in 1..n {
+      A[i] = args(i);
+    }
+    sort(A);
+    return A[n/2+1];
+  }
+
+  /* Return the high median of real(64) var args */
+  proc median_high(args: real(64) ...?n) {
+    var A: [1..n] real(64);
+    for i in 1..n {
+      A[i] = args(i);
+    }
+    sort(A);
+    return A[n/2+1];
+  }
+
+  /* Return the high median of real(32) var args */
+  proc median_high(args: real(32) ...?n) {
+    var A: [1..n] real(32);
+    for i in 1..n {
+      A[i] = args(i);
+    }
+    sort(A);
+    return A[n/2+1];
+  }
+
+  /* Return the high median of arrays */
+  proc median_high(X: [?D] real) {
+    sort(X);
+    var n = X.size;
+    return X[n/2+1];
+  }
+
   /* Variance function for integer var args */
   proc variance(args: int ...?n) {
     var A: [1..n] int;
@@ -263,3 +300,4 @@ module csm {
     return vr/X.size;
   }
 }
+

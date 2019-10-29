@@ -195,4 +195,30 @@ proc test_median_low_array(test: borrowed Test) throws {
   test.assertEqual(median_low(arr), 3.0);
 }
 
+/* Low median function test for integer var args */
+proc test_median_high_int(test: borrowed Test) throws {
+  test.assertEqual(median_high(1,3,5,7), 5);
+}
+
+/* Low median function test for real(64) var args */
+proc test_median_high_real64(test: borrowed Test) throws {
+  test.assertEqual(median_high(1.0,3.0,5.0,7.0), 5.0);
+}
+
+/* Low median function test for real(32) var args */
+proc test_median_high_real32(test: borrowed Test) throws {
+  var a: real(32) = 1.0;
+  var b: real(32) = 3.0;
+  var c: real(32) = 5.0;
+  var d: real(32) = 7.0;
+  var eq: real(32) = 5.0;
+  test.assertEqual(median_high(1.0,3.0,5.0,7.0), 5.0);
+}
+
+/* Low median function test for real(64) arrays */
+proc test_median_high_array(test: borrowed Test) throws {
+  var arr = [1.0,3.0,5.0,7.0];
+  test.assertEqual(median_high(arr), 5.0);
+}
+
 UnitTest.main();

@@ -143,32 +143,6 @@ proc test_median_array(test: borrowed Test) throws {
   test.assertEqual(median(arr1), 5.05);
 }
 
-/* Variance function test for integer var args */
-proc test_variance_int(test: borrowed Test) throws {
-  test.assertEqual(variance(5,8,10,21),36.5);
-}
-
-/* Variance function test for real(64) var args */
-proc test_variance_real64(test: borrowed Test) throws {
-  test.assertEqual(variance(5.0,8.0,10.0,21.0),36.5);
-}
-
-/* Variance function test for real(32) var args */
-proc test_variance_real32(test: borrowed Test) throws {
-  var a: real(32) = 5.0;
-  var b: real(32) = 8.0;
-  var c: real(32) = 10.0;
-  var d: real(32) = 21.0;
-  var eq: real(32) = 36.5;
-  test.assertEqual(variance(a,b,c,d), eq);
-}
-
-/* Variance function test for arrays */
-proc test_variance_array(test: borrowed Test) throws {
-  var arr = [5.0,8.0,10.0,21.0];
-  test.assertEqual(variance(arr), 36.5);
-}
-
 /* Low median function test for integer var args */
 proc test_median_low_int(test: borrowed Test) throws {
   test.assertEqual(median_low(1,3,5,7), 3);

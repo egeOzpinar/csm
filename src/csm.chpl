@@ -298,6 +298,58 @@ module csm {
     }
     return vr/X.size;
   }
+
+  /* Variance function for integer var args */
+  proc variance(args: int ...?n) {
+    var A: [1..n] int;
+    forall i in 1..n {
+      A[i] = args(i);
+    }
+    var m = mean(A);
+    var vr = 0.0;
+    for i in A.domain {
+      vr += (m-A(i))**2;
+    }
+    return vr/(n-1.0);
+  }
+
+  /* Variance function for real(64) var args */
+  proc variance(args: real(64) ...?n) {
+    var A: [1..n] real(64);
+    forall i in 1..n {
+      A[i] = args(i);
+    }
+    var m = mean(A);
+    var vr = 0.0;
+    for i in A.domain {
+      vr += (m-A(i))**2;
+    }
+    return vr/(n-1.0);
+  }
+
+  /* Variance function for real(32) var args */
+  proc variance(args: real(32) ...?n) {
+    var A: [1..n] real(32);
+    forall i in 1..n {
+      A[i] = args(i);
+    }
+    var m = mean(A);
+    var vr:real(32);
+    for i in A.domain {
+      vr += (m-A(i)):real(32)**2;
+    }
+    return vr/(n-1.0);
+  }
+
+   /* Population variance function for arrays */
+   proc variance(X: [?D] real) {
+    var m = mean(X);
+    var vr = 0.0;
+    for i in X.domain {
+      vr += (m-X(i))**2;
+    }
+    return vr/(X.size-1);
+  }
 }
 
 

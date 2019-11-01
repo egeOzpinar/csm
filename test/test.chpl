@@ -195,4 +195,30 @@ proc test_median_high_array(test: borrowed Test) throws {
   test.assertEqual(median_high(arr), 5.0);
 }
 
+/* Population variance function test for integer var args */
+proc test_pvariance_int(test: borrowed Test) throws {
+  test.assertEqual(pvariance(5,8,10,21),36.5);
+}
+
+/* Population variance function test for real(64) var args */
+proc test_pvariance_real64(test: borrowed Test) throws {
+  test.assertEqual(pvariance(5.0,8.0,10.0,21.0),36.5);
+}
+
+/* Population variance function test for real(32) var args */
+proc test_pvariance_real32(test: borrowed Test) throws {
+  var a: real(32) = 5.0;
+  var b: real(32) = 8.0;
+  var c: real(32) = 10.0;
+  var d: real(32) = 21.0;
+  var eq: real(32) = 36.5;
+  test.assertEqual(pvariance(a,b,c,d), eq);
+}
+
+/* Population variance function test for arrays */
+proc test_pvariance_array(test: borrowed Test) throws {
+  var arr = [5.0,8.0,10.0,21.0];
+  test.assertEqual(pvariance(arr), 36.5);
+}
+
 UnitTest.main();

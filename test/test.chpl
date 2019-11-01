@@ -221,4 +221,30 @@ proc test_pvariance_array(test: borrowed Test) throws {
   test.assertEqual(pvariance(arr), 36.5);
 }
 
+/* Variance function test for integer var args */
+proc test_variance_int(test: borrowed Test) throws {
+  test.assertLessThan(variance(5,8,10,21)-48.6667, 0.00001);
+}
+
+/* Variance function test for real(64) var args */
+proc test_variance_real64(test: borrowed Test) throws {
+  test.assertLessThan(variance(5.0,8.0,10.0,21.0)-48.6667, 0.00001);
+}
+
+/* Variance function test for real(32) var args */
+proc test_variance_real32(test: borrowed Test) throws {
+  var a: real(32) = 5.0;
+  var b: real(32) = 8.0;
+  var c: real(32) = 10.0;
+  var d: real(32) = 21.0;
+  var eq: real(32) = 36.5;
+  test.assertLessThan(variance(a,b,c,d)-48.6667, 0.00001);
+}
+
+/* Variance function test for arrays */
+proc test_variance_array(test: borrowed Test) throws {
+  var arr = [5.0,8.0,10.0,21.0];
+  test.assertLessThan(variance(arr)-48.6667, 0.00001);
+}
+
 UnitTest.main();

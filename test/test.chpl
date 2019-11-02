@@ -240,9 +240,15 @@ proc test_variance_real32(test: borrowed Test) throws {
   test.assertLessThan(variance(a,b,c,d)-48.6667, 0.00001);
 }
 
-/* Variance function test for arrays */
+/* Variance function test for real arrays */
 proc test_variance_array(test: borrowed Test) throws {
   var arr = [5.0,8.0,10.0,21.0];
+  test.assertLessThan(variance(arr)-48.6667, 0.00001);
+}
+
+/* Variance function test for integer arrays */
+proc test_variance_integer_array(test: borrowed Test) throws {
+  var arr = [5,8,10,21];
   test.assertLessThan(variance(arr)-48.6667, 0.00001);
 }
 

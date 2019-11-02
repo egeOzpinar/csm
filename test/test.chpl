@@ -246,4 +246,29 @@ proc test_variance_array(test: borrowed Test) throws {
   test.assertLessThan(variance(arr)-48.6667, 0.00001);
 }
 
+/* Standard deviation function test for integer var args */
+proc test_stdev_int(test: borrowed Test) throws {
+  test.assertLessThan(stdev(1,2,3,4)-1.29099, 0.00001);
+}
+
+/* Standard deviation function test for real(64) var args */
+proc test_stdev_real64(test: borrowed Test) throws {
+  test.assertLessThan(stdev(1.0,2.0,3.0,4.0)-1.29099, 0.00001);
+}
+
+/* Standard deviation function test for real(32) var args */
+proc test_stdev_real32(test: borrowed Test) throws {
+  var a: real(32) = 1.0;
+  var b: real(32) = 2.0;
+  var c: real(32) = 3.0;
+  var d: real(32) = 4.0;
+  test.assertLessThan(stdev(a,b,c,d)-1.29099, 0.00001);
+}
+
+/* Standard deviation function test for arrays */
+proc test_stdev_array(test: borrowed Test) throws {
+  var arr = [1.0,2.0,3.0,4.0];
+  test.assertLessThan(stdev(arr)-1.29099, 0.00001);
+}
+
 UnitTest.main();

@@ -341,7 +341,7 @@ module csm {
     return vr/(n-1.0);
   }
 
-   /* Population variance function for arrays */
+   /* Variance function for arrays */
    proc variance(X: [?D] real) {
     var m = mean(X);
     var vr = 0.0;
@@ -351,5 +351,6 @@ module csm {
     return vr/(X.size-1);
   }
 }
+
 
 

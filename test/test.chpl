@@ -237,7 +237,6 @@ proc test_variance_real32(test: borrowed Test) throws {
   var b: real(32) = 8.0;
   var c: real(32) = 10.0;
   var d: real(32) = 21.0;
-  var eq: real(32) = 36.5;
   test.assertLessThan(variance(a,b,c,d)-48.6667, 0.00001);
 }
 

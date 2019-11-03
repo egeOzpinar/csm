@@ -277,4 +277,21 @@ proc test_stdev_array(test: borrowed Test) throws {
   test.assertLessThan(stdev(arr)-1.29099, 0.00001);
 }
 
+/* Probability density function test for real(64) var args */
+proc test_pdf_real64(test: borrowed Test) throws {
+  var x: real(64) = 3.6;
+  var mu: real(64) = 3.6;
+  var sigma:real(64) = 0.15;
+  test.assertLessThan(pdf(x, mu, sigma)-2.65962, 0.00001);
+}
+
+/* Probability density function test for real(32) var args */
+proc test_pdf_real32(test: borrowed Test) throws {
+  var x: real(32) = 3.6;
+  var mu: real(32) = 3.6;
+  var sigma: real(32) = 0.15;
+  var eq: real(32) = 0.00001;
+  test.assertLessThan(pdf(x, mu, sigma)-2.65962, eq);
+}
+
 UnitTest.main();

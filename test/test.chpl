@@ -299,5 +299,28 @@ proc test_pdf_real32(test: borrowed Test) throws {
   var eq: real(32) = 0.00001;
   test.assertLessThan(pdf(x, mu, sigma)-2.65962, eq);
 }
+/* Population standard deviation function test for integer var args */
+proc test_pstdev_int(test: borrowed Test) throws {
+  test.assertLessThan(pstdev(1,2,2,2,3,4)-0.942809, 0.00001);
+}
 
+/* Population standard deviation function test for real(64) var args */
+proc test_pstdev_real64(test: borrowed Test) throws {
+  test.assertLessThan(pstdev(1.0,2.0,2.0,2.0,3.0,4.0)-0.942809, 0.00001);
+}
+
+/* Population standard deviation function test for real(32) var args */
+proc test_pstdev_real32(test: borrowed Test) throws {
+  var a: real(32) = 1.0;
+  var b: real(32) = 2.0;
+  var c: real(32) = 3.0;
+  var d: real(32) = 4.0;
+  test.assertLessThan(pstdev(a,b,b,b,c,d)-0.942809, 0.00001);
+}
+
+/* Population standard deviation function test for arrays */
+proc test_pstdev_array(test: borrowed Test) throws {
+  var arr = [1.0,2.0,2.0,2.0,3.0,4.0];
+  test.assertLessThan(pstdev(arr)-0.942809, 0.00001);
+}
 UnitTest.main();

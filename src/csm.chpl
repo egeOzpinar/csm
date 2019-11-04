@@ -459,6 +459,38 @@ module csm {
     return sqrt(variance(X));
   }
 
+  /* Population standard deviation function for integer var args */
+  proc pstdev(args: int ...?n) {
+    var A: [1..n] int;
+    forall i in 1..n {
+      A[i] = args(i);
+    }
+    return sqrt(pvariance(A));
+  }
+
+  /* Population standard deviation function for real(64) var args */
+  proc pstdev(args: real(64) ...?n) {
+    var A: [1..n] real(64);
+    forall i in 1..n {
+      A[i] = args(i);
+    }
+    return sqrt(pvariance(A));
+  }
+
+  /* Population standard deviation function for real(32) var args */
+  proc pstdev(args: real(32) ...?n) {
+    var A: [1..n] real(32);
+    forall i in 1..n {
+      A[i] = args(i);
+    }
+    return sqrt(pvariance(A));
+  }
+
+  /* Population standard deviation function for arrays */
+  proc pstdev(X: [?D] real) {
+    return sqrt(pvariance(X));
+  }
+
   /* Probability density function for real(64) var args */
   proc pdf(in x:real(64), mu:real(64) = 0, sigma:real(64) = 1) {
     x = (x-mu) / sigma;

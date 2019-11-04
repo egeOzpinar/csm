@@ -355,6 +355,16 @@ module csm {
     return vr/X.size;
   }
 
+  /* Population variance function for integer arrays */
+  proc pvariance(X: [?D] int) {
+    var m = mean(X);
+    var vr = 0.0;
+    for i in X.domain {
+      vr += (m-X(i))**2;
+    }
+    return vr/X.size;
+  }
+
   /* Variance function for integer var args */
   proc variance(args: int ...?n) {
     var A: [1..n] int;
@@ -463,5 +473,6 @@ module csm {
     return (exp(-x*x/2.0)):real(32) / (sqrt(2.0*pi)):real(32) / sigma;
   }
 }
+
 
 

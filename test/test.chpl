@@ -221,6 +221,12 @@ proc test_pvariance_array(test: borrowed Test) throws {
   test.assertEqual(pvariance(arr), 36.5);
 }
 
+/* Population variance function test for integer arrays */
+proc test_pvariance_int_array(test: borrowed Test) throws {
+  var arr = [5,8,10,21];
+  test.assertEqual(pvariance(arr), 36.5);
+}
+
 /* Variance function test for integer var args */
 proc test_variance_int(test: borrowed Test) throws {
   test.assertLessThan(variance(5,8,10,21)-48.6667, 0.00001);

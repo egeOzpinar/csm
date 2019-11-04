@@ -1,5 +1,61 @@
 /*
 csm - Chapel Statistics Module is a statistics module for Chapel which has statistics functions.
+
+ Function            Description
+==================  ==================================================
+mean                Arithmetic mean (average).
+geometric_mean      Geometric mean.
+harmonic_mean       Harmonic mean.
+median              Median (middle value).
+median_low          Low median.
+median_high         High median.
+variance            Variance.
+pvariance           Population variance.
+stdev               Standard deviation.
+pdf                 Probability density function.
+==================  ==================================================
+
+  Calculate the mean:
+
+  mean(1,2,3,4) or mean([1,2,3,4])
+  2.5
+
+  Calculate the geometric mean:
+  geometric_mean(1,2,3,10) or geometric_mean([1,2,3,10])
+  2.78316
+
+  Calculate the harmonic mean:
+  harmonic_mean(5,6,7) or harmonic_mean([5,6,7])
+  5.88785
+
+  Calculate the median:
+  median(1,6,2,8,3,4,4) or median([1,6,2,8,3,4,4])
+  4
+
+  Calculate the median_low:
+  median_low(1,3,5,7) or median_low([1,3,5,7])
+  3
+
+  Calculate the median_high:
+  median_high(1,3,5,7) or median_high([1,3,5,7])
+  5
+
+  Calculate the variance:
+  variance(5,8,10,21) or variance([5,8,10,21])
+  48.6667
+
+  Calculate the population variance:
+  pvariance(5,8,10,21) or pvariance([5,8,10,21])
+  36.5
+
+  Calculate the standard deviation:
+  stdev(1,2,3,4) or stdev([1,2,3,4])
+  1.29099
+
+  Calculate the probability density function:
+  pdf(3.6,3.6,0.15) or pdf(3.6,3.6,0.15)
+  2.65962
+
 */
 
 module csm {
@@ -407,4 +463,5 @@ module csm {
     return (exp(-x*x/2.0)):real(32) / (sqrt(2.0*pi)):real(32) / sigma;
   }
 }
+
 

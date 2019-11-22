@@ -9,6 +9,7 @@ harmonic_mean       Harmonic mean.
 median              Median (middle value).
 median_low          Low median.
 median_high         High median.
+mode                Most common of data.
 variance            Variance.
 pvariance           Population variance.
 stdev               Standard deviation.
@@ -16,7 +17,6 @@ pdf                 Probability density function.
 ==================  ==================================================
 
   Calculate the mean:
-
   mean(1,2,3,4) or mean([1,2,3,4])
   2.5
 
@@ -39,6 +39,10 @@ pdf                 Probability density function.
   Calculate the median_high:
   median_high(1,3,5,7) or median_high([1,3,5,7])
   5
+
+  Calculate the mode:
+  mode(1,4,2,5,5,1,1,1) or mode([1,4,2,5,5,1,1,1])
+  1
 
   Calculate the variance:
   variance(5,8,10,21) or variance([5,8,10,21])

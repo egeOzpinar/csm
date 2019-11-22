@@ -195,6 +195,23 @@ proc test_median_high_array(test: borrowed Test) throws {
   test.assertEqual(median_high(arr), 5.0);
 }
 
+/* Mode function test for ineteger var args */
+proc tes_mode_int(test: borrowed Test) throws {
+  test.assertEqual(mode(1,2,3,4,2,2,1,1,1,1), 1);
+}
+
+/* Mode function test for real(64) var args */
+proc tes_mode_real64(test: borrowed Test) throws {
+  test.assertEqual(mode(1.0,2.0,3.1,4.2,2.2,2.2,1.5,1.2,1.9,1.3), 2.2);
+}
+
+/* Mode function test for real(32) var args */
+proc tes_mode_real32(test: borrowed Test) throws {
+  var a:real(32) = 4.2;
+  var b:real(32) = 9.7;
+  test.assertEqual(mode(a,b,a,a,a,a,b,b,b,a), a);
+}
+
 /* Population variance function test for integer var args */
 proc test_pvariance_int(test: borrowed Test) throws {
   test.assertEqual(pvariance(5,8,10,21),36.5);

@@ -61,6 +61,8 @@ pdf                 Probability density function.
 module csm {
   use Sort;
 
+  pragma "no doc";
+
   /* Mean function for var args */
   proc mean(args: int ...?n) {
     var sum: int;

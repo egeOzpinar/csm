@@ -303,7 +303,100 @@ module csm {
     var n = X.size;
     return X[n/2+1];
   }
-/* Population variance function for integer var args */
+
+  /* Return the mode of integer args */
+  proc mode(args: int ...?n) {
+    var maxValue = 0, maxCount = 0;
+    for i in 1..n do {
+      var count = 1;
+
+      for j in 1..n do {
+        if (args(j) == args(i)) then count+=1;
+      }
+
+      if (count > maxCount) {
+        maxCount = count;
+        maxValue = args(i);
+      }
+    }
+    return maxValue;
+  }
+
+  /* Return the mode of real(64) args */
+  proc mode(args: real(64) ...?n) {
+    var maxValue = 0.0, maxCount = 0.0;
+    for i in 1..n do {
+      var count = 1.0;
+
+      for j in 1..n do {
+        if (args(j) == args(i)) then count+=1;
+      }
+
+      if (count > maxCount) {
+        maxCount = count;
+        maxValue = args(i);
+      }
+    }
+    return maxValue;
+  }
+
+  /* Return the mode of real(32) args */
+  proc mode(args: real(32) ...?n) {
+    var maxValue:real(32) = 0.0, maxCount:real(32) = 0.0;
+    for i in 1..n do {
+      var count:real(32) = 1.0;
+
+      for j in 1..n do {
+        if (args(j) == args(i)) then count+=1;
+      }
+
+      if (count > maxCount) {
+        maxCount = count;
+        maxValue = args(i);
+      }
+    }
+    return maxValue;
+  }
+
+  /* Return the mode of real(64) arrays */
+  proc mode(X: [?D] real) {
+    var maxValue = 0.0, maxCount = 0.0;
+    var n = X.size;
+    for i in 1..n do {
+      var count = 1.0;
+
+      for j in 1..n do {
+        if (X[j] == X[i]) then count+=1;
+      }
+
+      if (count > maxCount) {
+        maxCount = count;
+        maxValue = X[i];
+      }
+    }
+    return maxValue;
+  }
+
+  /* Return the mode of integer arrays */
+  proc mode(X: [?D] int) {
+    var maxValue = 0, maxCount = 0;
+    var n = X.size;
+    for i in 1..n do {
+      var count = 1;
+
+      for j in 1..n do {
+        if (X[j] == X[i]) then count+=1;
+      }
+
+      if (count > maxCount) {
+        maxCount = count;
+        maxValue = X[i];
+      }
+    }
+    return maxValue;
+  }
+
+  /* Population variance function for integer var args */
   proc pvariance(args: int ...?n) {
     var A: [1..n] int;
     forall i in 1..n {
@@ -505,6 +598,7 @@ module csm {
     return (exp(-x*x/2.0)):real(32) / (sqrt(2.0*pi)):real(32) / sigma;
   }
 }
+
 
 
 

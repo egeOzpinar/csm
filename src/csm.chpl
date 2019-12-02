@@ -84,19 +84,11 @@ module csm {
   }
 
   /* Mean function for integer arrays */
-  proc mean(X: [?D] int) {
-    var sum: int;
+  proc mean(X: [?D]) {
+    var sum = 0.0;
     for i in X.domain do
       sum+=X(i);
-    return sum:real/X.size;
-  }
-
-  /* Mean function for real(32) arrays */
-  proc mean(X: [?D] real(32)) {
-    var sum: real(32);
-    for i in X.domain do
-      sum+=X(i);
-    return sum:real/X.size;
+    return sum/X.size;
   }
 
   /* Geometric mean function for var args */

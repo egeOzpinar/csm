@@ -83,7 +83,7 @@ module csm {
     return sum:real/X.size;
   }
 
-  /* Mean function for integer arrays */
+  /* Mean function for arrays */
   proc mean(X: [?D]) {
     var sum = 0.0;
     for i in X.domain do

@@ -8,15 +8,16 @@ proc test_mean_args_int(test: borrowed Test) throws {
 
 /* mean function test for type real(64) */
 proc test_mean_args_real64(test: borrowed Test) throws {
-  test.assertEqual(mean(1,1.4),1.2);
+  test.assertEqual(mean(1.0,1.4),1.2);
 }
 
 /* mean function test for type real(32) */
 proc test_mean_args_real32(test: borrowed Test) throws {
   var num1: real(32) = 15.2;
   var num2: real(32) = 2.7;
-  var equal: real(32) = 8.95;
-  test.assertEqual(mean(num1,num2),equal);
+  var equal: real(64) = 8.95;
+  test.assertGreaterThan(mean(num1,num2),8.94999);
+  test.assertLessThan(mean(num1,num2),8.95001);
 }
 
 /* mean function test for real(64) arrays */

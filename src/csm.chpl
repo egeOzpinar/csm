@@ -68,27 +68,11 @@ module csm {
   pragma "no doc"
 
   /* Mean function for var args */
-  proc mean(args: int ...?n) {
-    var sum: int;
+  proc mean(args...?n) {
+    var sum = 0.0;
     for i in 1..n do
       sum+=args(i);
-    return sum:real(64)/n;
-  }
-
-  /* Mean function for type real(64) */
-  proc mean(in args: real(64) ...?n) {
-    var sum: real(64);
-    for i in 1..n do
-      sum+=args(i);
-    return sum:real(64)/n;
-  }
-
-  /* Mean function for type real(32) */
-  proc mean(in args: real(32) ...?n) {
-    var sum: real(32);
-    for i in 1..n do
-      sum+=args(i);
-    return sum:real(32)/n;
+    return sum/n;
   }
 
   /* Mean function for real(64) arrays */
@@ -604,7 +588,4 @@ module csm {
     return (exp(-x*x/2.0)):real(32) / (sqrt(2.0*pi)):real(32) / sigma;
   }
 }
-
-
-
 

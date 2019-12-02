@@ -116,7 +116,7 @@ module csm {
   }
 
   /* Harmonic mean function for arrays */
-  proc harmonic_mean(X: [?D] real) {
+  proc harmonic_mean(X: [?D]) {
     var sum: real;
     for i in X.domain do
       sum+=1.0/X(i);

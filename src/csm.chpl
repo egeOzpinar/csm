@@ -100,7 +100,7 @@ module csm {
   }
 
   /* Geometric mean function for arrays */
-  proc geometric_mean(X: [?D] real) {
+  proc geometric_mean(X: [?D]) {
     var mul = 1.0;
     for i in X.domain do
       mul*=X(i);

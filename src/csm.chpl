@@ -99,28 +99,12 @@ module csm {
     return sum:real/X.size;
   }
 
-  /* Geometric mean function for integer var args */
-  proc geometric_mean(args: int ...?n): real(64) {
-    var mul = 1;
-    for i in 1..n do
-      mul*=args(i);
-    return (mul**(1.0/n)):real(64);
-  }
-
-  /* Geometric mean function for real(64) var args */
-  proc geometric_mean(args: real(64) ...?n) {
+  /* Geometric mean function for var args */
+  proc geometric_mean(args...?n) {
     var mul = 1.0;
     for i in 1..n do
       mul*=args(i);
-    return mul**(1.0/n);
-  }
-
-  /* Geometric mean function for real(32) var args */
-  proc geometric_mean(args: real(32) ...?n) {
-    var mul = 1.0;
-    for i in 1..n do
-      mul*=args(i);
-    return mul**(1.0/n);
+    return (mul**(1.0/n));
   }
 
   /* Geometric mean function for arrays */

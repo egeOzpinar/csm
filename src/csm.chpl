@@ -115,25 +115,9 @@ module csm {
     return mul**(1.0/X.size);
   }
 
-  /* Harmonic mean function for integer var args */
-  proc harmonic_mean(args: int ...?n) {
-    var sum: real;
-    for i in 1..n do
-      sum+=1.0/args(i);
-    return n/sum;
-  }
-
-  /* Harmonic mean function for real(64) var args */
-  proc harmonic_mean(args: real(64) ...?n) {
-    var sum: real;
-    for i in 1..n do
-      sum+=1.0/args(i);
-    return n/sum;
-  }
-
-  /* Harmonic mean function for real(32) var args */
-  proc harmonic_mean(args: real(32) ...?n) {
-    var sum: real(32);
+  /* Harmonic mean function for var args */
+  proc harmonic_mean(args...?n) {
+    var sum = 0.0;
     for i in 1..n do
       sum+=1.0/args(i);
     return n/sum;

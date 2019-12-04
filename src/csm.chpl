@@ -179,20 +179,9 @@ module csm {
     else return A[n/2];
   }
 
-  /* Return the low median of real(64) args */
-  proc median_low(args: real(64) ...?n) {
-    var A: [1..n] real(64);
-    for i in 1..n {
-      A[i] = args(i);
-    }
-    sort(A);
-    if(n%2==1) then return A[n/2+1];
-    else return A[n/2];
-  }
-
-  /* Return the low median of real(32) args */
-  proc median_low(args: real(32) ...?n) {
-    var A: [1..n] real(32);
+  /* Return the low median of real args */
+  proc median_low(args: real ...?n) {
+    var A: [1..n] real;
     for i in 1..n {
       A[i] = args(i);
     }

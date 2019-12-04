@@ -275,17 +275,7 @@ module csm {
   }
 
    /* Population variance function for arrays */
-   proc pvariance(X: [?D] real) {
-    var m = mean(X);
-    var vr = 0.0;
-    for i in X.domain {
-      vr += (m-X(i))**2;
-    }
-    return vr/X.size;
-  }
-
-  /* Population variance function for integer arrays */
-  proc pvariance(X: [?D] int) {
+   proc pvariance(X: [?D]) {
     var m = mean(X);
     var vr = 0.0;
     for i in X.domain {

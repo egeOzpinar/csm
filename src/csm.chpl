@@ -465,7 +465,7 @@ module csm {
     return sqrt(pvariance(A));
   }
 
-  /* Population standard deviation function for real(64) var args */
+  /* Population standard deviation function for real var args */
   proc pstdev(args: real ...?n) {
     var A: [1..n] real;
     forall i in 1..n {
@@ -479,7 +479,7 @@ module csm {
     return sqrt(pvariance(X));
   }
 
-  /* Probability density function for real(64) var args */
+  /* Probability density function for var args */
   proc pdf(in x:real, mu:real = 0, sigma:real = 1) {
     x = (x-mu) / sigma;
     if sigma==0.0 then halt("Sigma can not be 0");

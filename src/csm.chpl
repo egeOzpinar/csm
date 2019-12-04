@@ -176,8 +176,8 @@ module csm {
     else return A[n/2];
   }
 
-  /* Return the low median of real(64) array */
-  proc median_low(X: [?D] real) {
+  /* Return the low median of array */
+  proc median_low(X: [?D]) {
     sort(X);
     var n = X.size;
     if(n%2==1) then return X[n/2+1];

@@ -144,7 +144,7 @@ module csm {
   }
 
   /* Median function for arrays */
-  proc median(X: [?D] real) {
+  proc median(X: [?D]) {
     sort(X);
     var n = X.size;
     if(n%2==1) then return X[n/2+1];

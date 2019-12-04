@@ -314,30 +314,16 @@ module csm {
     return vr/n;
   }
 
-  /* Population variance function for real(64) var args */
-  proc pvariance(args: real(64) ...?n) {
-    var A: [1..n] real(64);
+  /* Population variance function for real var args */
+  proc pvariance(args: real ...?n) {
+    var A: [1..n] real;
     forall i in 1..n {
       A[i] = args(i);
     }
     var m = mean(A);
-    var vr = 0.0;
+    var vr:real;
     for i in A.domain {
       vr += (m-A(i))**2;
-    }
-    return vr/n;
-  }
-
-  /* Population variance function for real(32) var args */
-  proc pvariance(args: real(32) ...?n) {
-    var A: [1..n] real(32);
-    forall i in 1..n {
-      A[i] = args(i);
-    }
-    var m = mean(A);
-    var vr:real(32);
-    for i in A.domain {
-      vr += (m-A(i)):real(32)**2;
     }
     return vr/n;
   }

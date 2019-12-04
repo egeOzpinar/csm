@@ -376,23 +376,9 @@ module csm {
     return vr/(n-1.0);
   }
 
-  /* Variance function for real(64) var args */
-  proc variance(args: real(64) ...?n) {
-    var A: [1..n] real(64);
-    forall i in 1..n {
-      A[i] = args(i);
-    }
-    var m = mean(A);
-    var vr = 0.0;
-    for i in A.domain {
-      vr += (m-A(i))**2;
-    }
-    return vr/(n-1.0);
-  }
-
-  /* Variance function for real(32) var args */
-  proc variance(args: real(32) ...?n) {
-    var A: [1..n] real(32);
+  /* Variance function for real var args */
+  proc variance(args: real ...?n) {
+    var A: [1..n] real;
     forall i in 1..n {
       A[i] = args(i);
     }

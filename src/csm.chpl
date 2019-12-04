@@ -433,18 +433,9 @@ module csm {
     return sqrt(variance(A));
   }
 
-  /* Standard deviation function for real(64) var args */
-  proc stdev(args: real(64) ...?n) {
-    var A: [1..n] real(64);
-    forall i in 1..n {
-      A[i] = args(i);
-    }
-    return sqrt(variance(A));
-  }
-
-  /* Standard deviation function for real(32) var args */
-  proc stdev(args: real(32) ...?n) {
-    var A: [1..n] real(32);
+  /* Standard deviation function for real var args */
+  proc stdev(args: real ...?n) {
+    var A: [1..n] real;
     forall i in 1..n {
       A[i] = args(i);
     }

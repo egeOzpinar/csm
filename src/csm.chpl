@@ -489,17 +489,10 @@ module csm {
   }
 
   /* Probability density function for real(64) var args */
-  proc pdf(in x:real(64), mu:real(64) = 0, sigma:real(64) = 1) {
+  proc pdf(in x:real, mu:real = 0, sigma:real = 1) {
     x = (x-mu) / sigma;
     if sigma==0.0 then halt("Sigma can not be 0");
     return (exp(-x*x/2.0)):real / (sqrt(2.0*pi)):real / sigma;
-  }
-
-  /* Probability density function for real(32) var args */
-  proc pdf(in x : real(32), mu:real(32)=0.0, sigma:real(32)=1.0) {
-    x = (x-mu) / sigma;
-    if sigma==0.0 then halt("Sigma can not be 0.0");
-    return (exp(-x*x/2.0)):real(32) / (sqrt(2.0*pi)):real(32) / sigma;
   }
 }
 

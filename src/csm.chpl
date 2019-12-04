@@ -75,14 +75,6 @@ module csm {
     return sum/n;
   }
 
-  /* Mean function for real(64) arrays */
-  proc mean(X: [?D] real) {
-    var sum: real;
-    for i in X.domain do
-      sum+=X(i);
-    return sum:real/X.size;
-  }
-
   /* Mean function for arrays */
   proc mean(X: [?D]) {
     var sum = 0.0;
@@ -510,4 +502,5 @@ module csm {
     return (exp(-x*x/2.0)):real(32) / (sqrt(2.0*pi)):real(32) / sigma;
   }
 }
+
 

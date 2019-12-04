@@ -262,31 +262,12 @@ module csm {
     return maxValue;
   }
 
-  /* Return the mode of real(64) arrays */
-  proc mode(X: [?D] real) {
+  /* Return the mode of arrays */
+  proc mode(X: [?D]) {
     var maxValue = 0.0, maxCount = 0.0;
     var n = X.size;
     for i in 1..n do {
       var count = 1.0;
-
-      for j in 1..n do {
-        if (X[j] == X[i]) then count+=1;
-      }
-
-      if (count > maxCount) {
-        maxCount = count;
-        maxValue = X[i];
-      }
-    }
-    return maxValue;
-  }
-
-  /* Return the mode of integer arrays */
-  proc mode(X: [?D] int) {
-    var maxValue = 0, maxCount = 0;
-    var n = X.size;
-    for i in 1..n do {
-      var count = 1;
 
       for j in 1..n do {
         if (X[j] == X[i]) then count+=1;

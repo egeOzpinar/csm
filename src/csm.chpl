@@ -205,7 +205,7 @@ module csm {
   }
 
   /* Return the high median of arrays */
-  proc median_high(X: [?D] real) {
+  proc median_high(X: [?D]) {
     sort(X);
     var n = X.size;
     return X[n/2+1];

@@ -162,7 +162,7 @@ module csm {
   /* Return the high median of var args */
   proc median_high(args ...?n) {
     var A: [1..n] real;
-    for i in 1..n {
+    forall i in 1..n {
       A[i] = args(i);
     }
     sort(A);

@@ -140,7 +140,7 @@ module csm {
     }
   }
 
-  /* Return the low median of real args */
+  /* Return the low median of var args */
   proc median_low(args...?n) {
     var A: [1..n] real;
     for i in 1..n {
@@ -159,7 +159,7 @@ module csm {
     else return X[n/2];
   }
 
-  /* Return the high median of real var args */
+  /* Return the high median of var args */
   proc median_high(args ...?n) {
     var A: [1..n] real;
     for i in 1..n {

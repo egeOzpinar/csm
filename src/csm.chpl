@@ -249,18 +249,8 @@ module csm {
     return vr/(n-1.0);
   }
 
-  /* Variance function for real arrays */
-  proc variance(X: [?D] real) {
-    var m = mean(X);
-    var vr = 0.0;
-    for i in X.domain {
-      vr += (m-X(i))**2;
-    }
-    return vr/(X.size-1);
-  }
-
-  /* Variance function for integer arrays */
-  proc variance(X: [?D] int) {
+  /* Variance function for arrays */
+  proc variance(X: [?D]) {
     var m = mean(X);
     var vr = 0.0;
     for i in X.domain {

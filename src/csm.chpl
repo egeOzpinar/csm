@@ -13,6 +13,7 @@ mode                Most common of data.
 variance            Variance.
 pvariance           Population variance.
 stdev               Standard deviation.
+pstdev              Population standard deviation.
 pdf                 Probability density function.
 ==================  ==================================================
 

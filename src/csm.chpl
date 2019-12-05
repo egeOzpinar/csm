@@ -118,7 +118,7 @@ module csm {
   /* Median function for var args */
   proc median(args...?n) {
     var A: [1..n] real;
-    for i in 1..n {
+    forall i in 1..n {
       A[i] = args(i);
     }
     sort(A);

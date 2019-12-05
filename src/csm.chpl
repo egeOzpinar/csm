@@ -158,19 +158,9 @@ module csm {
     if(n%2==1) then return X[n/2+1];
     else return X[n/2];
   }
-  
-  /* Return the high median of integer var args */
-  proc median_high(args: int ...?n) {
-    var A: [1..n] int;
-    for i in 1..n {
-      A[i] = args(i);
-    }
-    sort(A);
-    return A[n/2+1];
-  }
 
   /* Return the high median of real var args */
-  proc median_high(args: real ...?n) {
+  proc median_high(args ...?n) {
     var A: [1..n] real;
     for i in 1..n {
       A[i] = args(i);

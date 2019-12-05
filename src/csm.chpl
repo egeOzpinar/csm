@@ -259,17 +259,8 @@ module csm {
     return vr/(X.size-1);
   }
 
-  /* Standard deviation function for integer var args */
-  proc stdev(args: int ...?n) {
-    var A: [1..n] int;
-    forall i in 1..n {
-      A[i] = args(i);
-    }
-    return sqrt(variance(A));
-  }
-
-  /* Standard deviation function for real var args */
-  proc stdev(args: real ...?n) {
+  /* Standard deviation function for var args */
+  proc stdev(args...?n) {
     var A: [1..n] real;
     forall i in 1..n {
       A[i] = args(i);
@@ -278,7 +269,7 @@ module csm {
   }
 
   /* Standard deviation function for arrays */
-  proc stdev(X: [?D] real) {
+  proc stdev(X: [?D]) {
     return sqrt(variance(X));
   }
 

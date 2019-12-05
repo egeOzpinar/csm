@@ -211,22 +211,8 @@ module csm {
     return maxValue;
   }
 
-  /* Population variance function for integer var args */
-  proc pvariance(args: int ...?n) {
-    var A: [1..n] int;
-    forall i in 1..n {
-      A[i] = args(i);
-    }
-    var m = mean(A);
-    var vr = 0.0;
-    for i in A.domain {
-      vr += (m-A(i))**2;
-    }
-    return vr/n;
-  }
-
-  /* Population variance function for real var args */
-  proc pvariance(args: real ...?n) {
+  /* Population variance function for var args */
+  proc pvariance(args...?n) {
     var A: [1..n] real;
     forall i in 1..n {
       A[i] = args(i);

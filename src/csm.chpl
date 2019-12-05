@@ -57,6 +57,10 @@ pdf                 Probability density function.
   stdev(1,2,3,4) or stdev([1,2,3,4])
   1.29099
 
+  Calculate the population standard deviation:
+  pstdev(1,2,3,4) or pstdev([1,2,3,4])
+  1.11803
+
   Calculate the probability density function:
   pdf(3.6,3.6,0.15) or pdf(3.6,3.6,0.15)
   2.65962

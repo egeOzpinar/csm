@@ -115,22 +115,8 @@ module csm {
     return X.size/sum;
   }
 
-  /* Median function for integer var args */
-  proc median(args: int ...?n) {
-    var A: [1..n] int;
-    for i in 1..n {
-      A[i] = args(i);
-    }
-    sort(A);
-    if(n%2==1) then return A[n/2+1];
-    else{
-      var i=n/2;
-      return (A[i] + A[i+1])/2.0;
-    }
-  }
-
-  /* Median function for real var args */
-  proc median(args: real ...?n) {
+  /* Median function for var args */
+  proc median(args...?n) {
     var A: [1..n] real;
     for i in 1..n {
       A[i] = args(i);
@@ -385,5 +371,6 @@ module csm {
     return (exp(-x*x/2.0)):real / (sqrt(2.0*pi)):real / sigma;
   }
 }
+
 
 

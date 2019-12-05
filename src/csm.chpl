@@ -143,7 +143,7 @@ module csm {
   /* Return the low median of var args */
   proc median_low(args...?n) {
     var A: [1..n] real;
-    for i in 1..n {
+    forall i in 1..n {
       A[i] = args(i);
     }
     sort(A);

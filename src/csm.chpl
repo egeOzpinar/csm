@@ -87,9 +87,7 @@ module csm {
 
   /* Geometric mean function for var args */
   proc geometric_mean(args...?n) {
-    var mul = 1.0;
-    for i in 1..n do
-      mul*=args(i);
+    var mul = (* reduce args);
     return (mul**(1.0/n));
   }
 

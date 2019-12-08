@@ -79,9 +79,7 @@ module csm {
 
   /* Mean function for arrays */
   proc mean(X: [?D]) {
-    var sum = 0.0;
-    for i in X.domain do
-      sum+=X(i);
+    var sum = (+ reduce X);
     return sum/X.size;
   }
 
@@ -294,6 +292,8 @@ module csm {
     return (exp(-x*x/2.0)):real / (sqrt(2.0*pi)):real / sigma;
   }
 }
+
+
 
 
 

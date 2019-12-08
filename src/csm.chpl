@@ -91,9 +91,7 @@ module csm {
 
   /* Geometric mean function for arrays */
   proc geometric_mean(X: [?D]) {
-    var mul = 1.0;
-    for i in X.domain do
-      mul*=X(i);
+    var mul = (* reduce X);
     return mul**(1.0/X.size);
   }
 
@@ -292,9 +290,4 @@ module csm {
     return (exp(-x*x/2.0)):real / (sqrt(2.0*pi)):real / sigma;
   }
 }
-
-
-
-
-
 

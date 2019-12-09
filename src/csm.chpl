@@ -229,14 +229,10 @@ module csm {
 
   /* Variance function for var args */
   proc variance(args...?n) {
-    var A: [1..n] real;
-    forall i in 1..n {
-      A[i] = args(i);
-    }
-    var m = mean(A);
+    var m = mean((...args));
     var vr : real;
-    for i in A.domain {
-      vr += (m-A(i))**2;
+    for i in 1..n {
+      vr += (m-args(i))**2;
     }
     return vr/(n-1.0);
   }

@@ -209,14 +209,10 @@ module csm {
 
   /* Population variance function for var args */
   proc pvariance(args...?n) {
-    var A: [1..n] real;
-    forall i in 1..n {
-      A[i] = args(i);
-    }
-    var m = mean(A);
+    var m = mean((...args));
     var vr:real;
-    for i in A.domain {
-      vr += (m-A(i))**2;
+    for i in 1..n {
+      vr += (m-args(i))**2;
     }
     return vr/n;
   }
@@ -290,4 +286,5 @@ module csm {
     return (exp(-x*x/2.0)):real / (sqrt(2.0*pi)):real / sigma;
   }
 }
+
 

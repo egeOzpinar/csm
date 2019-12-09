@@ -1,0 +1,285 @@
+.. default-domain:: chpl
+
+.. module:: csm
+   :synopsis: Chapel Statistics Module is a statistics module for Chapel which has statistics functions.
+
+csm
+===
+**Usage**
+
+.. code-block:: chapel
+
+   use csm;
+
+
+Chapel Statistics Module is a statistics module for Chapel which has statistics functions.
+It provides fundamental statistics functions. Forms of the functions except :proc:`~csm.pdf()` function:
+
+.. code-block:: chapel
+
+  proc funcName(var args) {}
+
+or
+
+.. code-block:: chapel
+
+  proc funcName(array) {}
+
+Examples
+--------
+
+Basic Usage
+^^^^^^^^^^^
+
+For variadic arguments:
+
+.. code-block:: chapel
+
+  // example1.chpl
+  use csm;
+
+  var x = mean(12,32,43,2,5,743,54);
+
+For arrays:
+
+.. code-block:: chapel
+
+  // example2.chpl
+  use csm;
+
+  var array = [12,32,43,2,5,743,54];
+  var m = mean(array);
+
+Compile the code samples at the above:
+
+.. code-block:: chapel
+
+  chpl example1.chpl
+
+and
+
+.. code-block:: chapel
+
+  chpl example2.chpl
+
+return same result.
+
+Output:
+
+.. code-block:: text
+
+  127.286
+
+.. function:: proc mean(args ...?n)
+
+   
+   Calculate the mean.
+   
+   :arg args: A set of number to calculate the mean.
+   :type args: `int` , `real`
+   
+
+.. function:: proc mean(X: [?D])
+
+   
+   Calculate the mean.
+   
+   :arg X: An array of number to calculate the mean.
+   :type args: `array`
+   
+
+.. function:: proc geometric_mean(args ...?n)
+
+   
+   Calculate the geometric mean.
+   
+   :arg args: A set of number to calculate the geometric mean.
+   :type args: `int` , `real`
+   
+
+.. function:: proc geometric_mean(X: [?D])
+
+   
+   Calculate the geometric mean.
+   
+   :arg X: An array of number to calculate the geometric mean.
+   :type args: `array`
+   
+
+.. function:: proc harmonic_mean(args ...?n)
+
+   
+   Calculate the harmonic mean.
+   
+   :arg args: A set of number to calculate the harmonic mean.
+   :type args: `int` , `real`
+   
+
+.. function:: proc harmonic_mean(X: [?D])
+
+   
+   Calculate the harmonic mean.
+   
+   :arg X: An array of number to calculate the harmonic mean.
+   :type args: `array`
+   
+
+.. function:: proc median(args ...?n)
+
+   
+   Calculate the median.
+   
+   :arg args: A set of number to calculate the median.
+   :type args: `int` , `real`
+   
+
+.. function:: proc median(X: [?D])
+
+   
+   Calculate the median.
+   
+   :arg X: An array of number to calculate the median.
+   :type args: `array`
+   
+
+.. function:: proc median_low(args ...?n)
+
+   
+   Calculate the low median.
+   
+   :arg args: A set of number to calculate the low median.
+   :type args: `int` , `real`
+   
+
+.. function:: proc median_low(X: [?D])
+
+   
+   Calculate the low median.
+   
+   :arg X: An array of number to calculate the low median.
+   :type args: `array`
+   
+
+.. function:: proc median_high(args ...?n)
+
+   
+   Calculate the high median.
+   
+   :arg args: A set of number to calculate the high median.
+   :type args: `int` , `real`
+   
+
+.. function:: proc median_high(X: [?D])
+
+   
+   Calculate the high median.
+   
+   :arg X: An array of number to calculate the high median.
+   :type args: `array`
+   
+
+.. function:: proc mode(args ...?n)
+
+   
+   Calculate the mode.
+   
+   :arg args: A set of number to calculate the mode.
+   :type args: `int` , `real`
+   
+
+.. function:: proc mode(X: [?D])
+
+   
+   Calculate the mode.
+   
+   :arg X: An array of number to calculate the mode.
+   :type args: `array`
+   
+
+.. function:: proc pvariance(args ...?n)
+
+   
+   Calculate the population variance.
+   
+   :arg args: A set of number to calculate the population variance.
+   :type args: `int` , `real`
+   
+
+.. function:: proc pvariance(X: [?D])
+
+   
+   Calculate the population variance.
+   
+   :arg X: An array of number to calculate the population variance.
+   :type args: `array`
+   
+
+.. function:: proc variance(args ...?n)
+
+   
+   Calculate the variance.
+   
+   :arg args: A set of number to calculate the variance.
+   :type args: `int` , `real`
+   
+
+.. function:: proc variance(X: [?D])
+
+   
+   Calculate the variance.
+   
+   :arg X: An array of number to calculate the variance.
+   :type args: `array`
+   
+
+.. function:: proc stdev(args ...?n)
+
+   
+   Calculate the standard deviation.
+   
+   :arg args: A set of number to calculate the standard deviation.
+   :type args: `int` , `real`
+   
+
+.. function:: proc stdev(X: [?D])
+
+   
+   Calculate the standard deviation.
+   
+   :arg X: An array of number to calculate the standard deviation.
+   :type args: `array`
+   
+
+.. function:: proc pstdev(args ...?n)
+
+   
+   Calculate the population standard deviation.
+   
+   :arg args: A set of number to calculate the population standard deviation.
+   :type args: `int` , `real`
+   
+
+.. function:: proc pstdev(X: [?D])
+
+   
+   Calculate the population standard deviation.
+   
+   :arg X: An array of number to calculate the population standard deviation.
+   :type args: `array`
+   
+
+.. function:: proc pdf(in x: real, mu: real = 0, sigma: real = 1)
+
+   
+   Calculate the probability density function of a Gaussian Distribution.
+   
+   :arg x: Value to be calculated.
+   :type x: `real`
+   
+   :arg mu: Mean.
+   :type mu: `real`
+   
+   :arg sigma: Standard deviation
+   :type sigma: `real`
+   
+

@@ -1,0 +1,586 @@
+
+
+<!DOCTYPE html>
+<!--[if IE 8]><html class="no-js lt-ie9" lang="en" > <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js" lang="en" > <!--<![endif]-->
+<head>
+  <meta charset="utf-8">
+  
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <title>csm &mdash; chpldoc 0.0.1 documentation</title>
+  
+
+  
+  
+
+  
+
+  
+  
+    
+
+  
+
+  
+  
+    <link rel="stylesheet" href="../../_static/css/theme.css" type="text/css" />
+  
+
+  
+
+  
+    <link rel="top" title="chpldoc 0.0.1 documentation" href="../../index.html"/>
+        <link rel="prev" title="chpldoc documentation" href="../../index.html"/> 
+
+  
+  <script src="../../_static/js/modernizr.min.js"></script>
+
+</head>
+
+<body class="wy-body-for-nav" role="document">
+
+  <div class="wy-grid-for-nav">
+
+    
+    <nav data-toggle="wy-nav-shift" class="wy-nav-side">
+      <div class="wy-side-scroll">
+        <div class="wy-side-nav-search">
+          
+
+          
+            <a href="../../index.html" class="icon icon-home"> chpldoc
+          
+
+          
+          </a>
+
+          
+            
+            
+              <div class="version">
+                0.0.1
+              </div>
+            
+          
+
+          
+<div role="search">
+  <form id="rtd-search-form" class="wy-form" action="../../search.html" method="get">
+    <input type="text" name="q" placeholder="Search docs" />
+    <input type="hidden" name="check_keywords" value="yes" />
+    <input type="hidden" name="area" value="default" />
+  </form>
+</div>
+
+          
+        </div>
+
+        <div class="wy-menu wy-menu-vertical" data-spy="affix" role="navigation" aria-label="main navigation">
+          
+            
+            
+                <ul>
+<li class="toctree-l1"><a class="reference internal" href="../../index.html">chpldoc documentation</a></li>
+</ul>
+<ul class="current">
+<li class="toctree-l1 current"><a class="current reference internal" href="">csm</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#examples">Examples</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="#basic-usage">Basic Usage</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+
+            
+          
+        </div>
+      </div>
+    </nav>
+
+    <section data-toggle="wy-nav-shift" class="wy-nav-content-wrap">
+
+      
+      <nav class="wy-nav-top" role="navigation" aria-label="top navigation">
+        <i data-toggle="wy-nav-top" class="fa fa-bars"></i>
+        <a href="../../index.html">chpldoc</a>
+      </nav>
+
+
+      
+      <div class="wy-nav-content">
+        <div class="rst-content">
+          
+
+
+
+
+
+<div role="navigation" aria-label="breadcrumbs navigation">
+  <ul class="wy-breadcrumbs">
+    <li><a href="../../index.html">Docs</a> &raquo;</li>
+      
+    <li>csm</li>
+      <li class="wy-breadcrumbs-aside">
+        
+          
+            <a href="../../_sources/modules/src/csm.txt" rel="nofollow"> View page source</a>
+          
+        
+      </li>
+  </ul>
+  <hr/>
+</div>
+          <div role="main" class="document" itemscope="itemscope" itemtype="http://schema.org/Article">
+           <div itemprop="articleBody">
+            
+  <span class="target" id="module-csm"></span><div class="section" id="csm">
+<h1>csm<a class="headerlink" href="#csm" title="Permalink to this headline">¶</a></h1>
+<p><strong>Usage</strong></p>
+<div class="highlight-chapel"><div class="highlight"><pre><span></span><span class="k">use</span> <span class="nx">csm</span><span class="p">;</span>
+</pre></div>
+</div>
+<p>Chapel Statistics Module is a statistics module for Chapel which has statistics functions.
+It provides fundamental statistics functions. Forms of the functions except <a class="reference internal" href="#csm.pdf" title="csm.pdf"><code class="xref chpl chpl-proc docutils literal"><span class="pre">pdf()</span></code></a> function:</p>
+<div class="highlight-chapel"><div class="highlight"><pre><span></span><span class="k">proc</span> <span class="nf">funcName</span><span class="p">(</span><span class="kd">var</span> <span class="nx">args</span><span class="p">)</span> <span class="p">{}</span>
+</pre></div>
+</div>
+<p>or</p>
+<div class="highlight-chapel"><div class="highlight"><pre><span></span><span class="k">proc</span> <span class="nf">funcName</span><span class="p">(</span><span class="nx">array</span><span class="p">)</span> <span class="p">{}</span>
+</pre></div>
+</div>
+<div class="section" id="examples">
+<h2>Examples<a class="headerlink" href="#examples" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="basic-usage">
+<h3>Basic Usage<a class="headerlink" href="#basic-usage" title="Permalink to this headline">¶</a></h3>
+<p>For variadic arguments:</p>
+<div class="highlight-chapel"><div class="highlight"><pre><span></span><span class="c1">// example1.chpl</span>
+<span class="k">use</span> <span class="nx">csm</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">x</span> <span class="o">=</span> <span class="nx">mean</span><span class="p">(</span><span class="mi">12</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">43</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">743</span><span class="p">,</span><span class="mi">54</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>For arrays:</p>
+<div class="highlight-chapel"><div class="highlight"><pre><span></span><span class="c1">// example2.chpl</span>
+<span class="k">use</span> <span class="nx">csm</span><span class="p">;</span>
+
+<span class="kd">var</span> <span class="nx">array</span> <span class="o">=</span> <span class="p">[</span><span class="mi">12</span><span class="p">,</span><span class="mi">32</span><span class="p">,</span><span class="mi">43</span><span class="p">,</span><span class="mi">2</span><span class="p">,</span><span class="mi">5</span><span class="p">,</span><span class="mi">743</span><span class="p">,</span><span class="mi">54</span><span class="p">];</span>
+<span class="kd">var</span> <span class="nx">m</span> <span class="o">=</span> <span class="nx">mean</span><span class="p">(</span><span class="nx">array</span><span class="p">);</span>
+</pre></div>
+</div>
+<p>Compile the code samples at the above:</p>
+<div class="highlight-chapel"><div class="highlight"><pre><span></span><span class="nx">chpl</span> <span class="nx">example1</span><span class="p">.</span><span class="nx">chpl</span>
+</pre></div>
+</div>
+<p>and</p>
+<div class="highlight-chapel"><div class="highlight"><pre><span></span><span class="nx">chpl</span> <span class="nx">example2</span><span class="p">.</span><span class="nx">chpl</span>
+</pre></div>
+</div>
+<p>return same result.</p>
+<p>Output:</p>
+<div class="highlight-text"><div class="highlight"><pre><span></span>127.286
+</pre></div>
+</div>
+<dl class="function">
+<dt id="csm.mean">
+<em class="property">proc </em><code class="descname">mean</code><span class="sig-paren">(</span><em>args ...?n</em><span class="sig-paren">)</span><a class="headerlink" href="#csm.mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the mean.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><strong>args</strong> : <cite>int</cite> , <cite>real</cite> &#8211; A set of number to calculate the mean.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<em class="property">proc </em><code class="descname">mean</code><span class="sig-paren">(</span><em>X: [?D]</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculate the mean.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><strong>X</strong> &#8211; An array of number to calculate the mean.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="csm.geometric_mean">
+<em class="property">proc </em><code class="descname">geometric_mean</code><span class="sig-paren">(</span><em>args ...?n</em><span class="sig-paren">)</span><a class="headerlink" href="#csm.geometric_mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the geometric mean.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><strong>args</strong> : <cite>int</cite> , <cite>real</cite> &#8211; A set of number to calculate the geometric mean.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<em class="property">proc </em><code class="descname">geometric_mean</code><span class="sig-paren">(</span><em>X: [?D]</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculate the geometric mean.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><strong>X</strong> &#8211; An array of number to calculate the geometric mean.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="csm.harmonic_mean">
+<em class="property">proc </em><code class="descname">harmonic_mean</code><span class="sig-paren">(</span><em>args ...?n</em><span class="sig-paren">)</span><a class="headerlink" href="#csm.harmonic_mean" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the harmonic mean.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><strong>args</strong> : <cite>int</cite> , <cite>real</cite> &#8211; A set of number to calculate the harmonic mean.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<em class="property">proc </em><code class="descname">harmonic_mean</code><span class="sig-paren">(</span><em>X: [?D]</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculate the harmonic mean.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><strong>X</strong> &#8211; An array of number to calculate the harmonic mean.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="csm.median">
+<em class="property">proc </em><code class="descname">median</code><span class="sig-paren">(</span><em>args ...?n</em><span class="sig-paren">)</span><a class="headerlink" href="#csm.median" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the median.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><strong>args</strong> : <cite>int</cite> , <cite>real</cite> &#8211; A set of number to calculate the median.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<em class="property">proc </em><code class="descname">median</code><span class="sig-paren">(</span><em>X: [?D]</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculate the median.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><strong>X</strong> &#8211; An array of number to calculate the median.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="csm.median_low">
+<em class="property">proc </em><code class="descname">median_low</code><span class="sig-paren">(</span><em>args ...?n</em><span class="sig-paren">)</span><a class="headerlink" href="#csm.median_low" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the low median.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><strong>args</strong> : <cite>int</cite> , <cite>real</cite> &#8211; A set of number to calculate the low median.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<em class="property">proc </em><code class="descname">median_low</code><span class="sig-paren">(</span><em>X: [?D]</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculate the low median.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><strong>X</strong> &#8211; An array of number to calculate the low median.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="csm.median_high">
+<em class="property">proc </em><code class="descname">median_high</code><span class="sig-paren">(</span><em>args ...?n</em><span class="sig-paren">)</span><a class="headerlink" href="#csm.median_high" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the high median.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><strong>args</strong> : <cite>int</cite> , <cite>real</cite> &#8211; A set of number to calculate the high median.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<em class="property">proc </em><code class="descname">median_high</code><span class="sig-paren">(</span><em>X: [?D]</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculate the high median.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><strong>X</strong> &#8211; An array of number to calculate the high median.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="csm.mode">
+<em class="property">proc </em><code class="descname">mode</code><span class="sig-paren">(</span><em>args ...?n</em><span class="sig-paren">)</span><a class="headerlink" href="#csm.mode" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the mode.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><strong>args</strong> : <cite>int</cite> , <cite>real</cite> &#8211; A set of number to calculate the mode.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<em class="property">proc </em><code class="descname">mode</code><span class="sig-paren">(</span><em>X: [?D]</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculate the mode.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><strong>X</strong> &#8211; An array of number to calculate the mode.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="csm.pvariance">
+<em class="property">proc </em><code class="descname">pvariance</code><span class="sig-paren">(</span><em>args ...?n</em><span class="sig-paren">)</span><a class="headerlink" href="#csm.pvariance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the population variance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><strong>args</strong> : <cite>int</cite> , <cite>real</cite> &#8211; A set of number to calculate the population variance.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<em class="property">proc </em><code class="descname">pvariance</code><span class="sig-paren">(</span><em>X: [?D]</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculate the population variance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><strong>X</strong> &#8211; An array of number to calculate the population variance.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="csm.variance">
+<em class="property">proc </em><code class="descname">variance</code><span class="sig-paren">(</span><em>args ...?n</em><span class="sig-paren">)</span><a class="headerlink" href="#csm.variance" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the variance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><strong>args</strong> : <cite>int</cite> , <cite>real</cite> &#8211; A set of number to calculate the variance.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<em class="property">proc </em><code class="descname">variance</code><span class="sig-paren">(</span><em>X: [?D]</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculate the variance.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><strong>X</strong> &#8211; An array of number to calculate the variance.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="csm.stdev">
+<em class="property">proc </em><code class="descname">stdev</code><span class="sig-paren">(</span><em>args ...?n</em><span class="sig-paren">)</span><a class="headerlink" href="#csm.stdev" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the standard deviation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><strong>args</strong> : <cite>int</cite> , <cite>real</cite> &#8211; A set of number to calculate the standard deviation.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<em class="property">proc </em><code class="descname">stdev</code><span class="sig-paren">(</span><em>X: [?D]</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculate the standard deviation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><strong>X</strong> &#8211; An array of number to calculate the standard deviation.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="csm.pstdev">
+<em class="property">proc </em><code class="descname">pstdev</code><span class="sig-paren">(</span><em>args ...?n</em><span class="sig-paren">)</span><a class="headerlink" href="#csm.pstdev" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the population standard deviation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><strong>args</strong> : <cite>int</cite> , <cite>real</cite> &#8211; A set of number to calculate the population standard deviation.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt>
+<em class="property">proc </em><code class="descname">pstdev</code><span class="sig-paren">(</span><em>X: [?D]</em><span class="sig-paren">)</span></dt>
+<dd><p>Calculate the population standard deviation.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><strong>X</strong> &#8211; An array of number to calculate the population standard deviation.</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+<dl class="function">
+<dt id="csm.pdf">
+<em class="property">proc </em><code class="descname">pdf</code><span class="sig-paren">(</span><em>in x: real</em>, <em>mu: real = 0</em>, <em>sigma: real = 1</em><span class="sig-paren">)</span><a class="headerlink" href="#csm.pdf" title="Permalink to this definition">¶</a></dt>
+<dd><p>Calculate the probability density function of a Gaussian Distribution.</p>
+<table class="docutils field-list" frame="void" rules="none">
+<col class="field-name" />
+<col class="field-body" />
+<tbody valign="top">
+<tr class="field-odd field"><th class="field-name">Arguments:</th><td class="field-body"><ul class="first last simple">
+<li><strong>x</strong> : <cite>real</cite> &#8211; Value to be calculated.</li>
+<li><strong>mu</strong> : <cite>real</cite> &#8211; Mean.</li>
+<li><strong>sigma</strong> : <cite>real</cite> &#8211; Standard deviation</li>
+</ul>
+</td>
+</tr>
+</tbody>
+</table>
+</dd></dl>
+
+</div>
+</div>
+</div>
+
+
+           </div>
+          </div>
+          <footer>
+  
+    <div class="rst-footer-buttons" role="navigation" aria-label="footer navigation">
+      
+      
+        <a href="../../index.html" class="btn btn-neutral" title="chpldoc documentation" accesskey="p"><span class="fa fa-arrow-circle-left"></span> Previous</a>
+      
+    </div>
+  
+
+  <hr/>
+
+  <div role="contentinfo">
+    <p>
+        &copy; Copyright 2015, .
+
+    </p>
+  </div>
+  Built with <a href="http://sphinx-doc.org/">Sphinx</a> using a <a href="https://github.com/snide/sphinx_rtd_theme">theme</a> provided by <a href="https://readthedocs.org">Read the Docs</a>. 
+
+</footer>
+
+        </div>
+      </div>
+
+    </section>
+
+  </div>
+  
+
+
+  
+
+    <script type="text/javascript">
+        var DOCUMENTATION_OPTIONS = {
+            URL_ROOT:'../../',
+            VERSION:'0.0.1',
+            COLLAPSE_INDEX:false,
+            FILE_SUFFIX:'.html',
+            HAS_SOURCE:  true
+        };
+    </script>
+      <script type="text/javascript" src="../../_static/jquery.js"></script>
+      <script type="text/javascript" src="../../_static/underscore.js"></script>
+      <script type="text/javascript" src="../../_static/doctools.js"></script>
+      <script type="text/javascript" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS-MML_HTMLorMML"></script>
+
+  
+
+  
+  
+    <script type="text/javascript" src="../../_static/js/theme.js"></script>
+  
+
+  
+  
+  <script type="text/javascript">
+      jQuery(function () {
+          SphinxRtdTheme.StickyNav.enable();
+      });
+  </script>
+  
+ 
+
+
+
+</body>
+</html>

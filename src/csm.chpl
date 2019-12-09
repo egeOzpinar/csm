@@ -269,8 +269,8 @@ module csm {
 
   /* Probability density function for var args */
   proc pdf(in x:real, mu:real = 0, sigma:real = 1) {
-    x = (x-mu) / sigma;
     if sigma==0.0 then halt("Sigma can not be 0");
+    x = (x-mu) / sigma;
     return (exp(-x*x/2.0)):real / (sqrt(2.0*pi)):real / sigma;
   }
 }

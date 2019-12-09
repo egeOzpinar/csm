@@ -74,7 +74,7 @@ module csm {
 
   /* Mean function for var args */
   proc mean(args...?n) {
-    return (+ reduce args)/n;
+    return (+ reduce args)/n:real;
   }
 
   /* Mean function for arrays */

@@ -249,11 +249,7 @@ module csm {
 
   /* Standard deviation function for var args */
   proc stdev(args...?n) {
-    var A: [1..n] real;
-    forall i in 1..n {
-      A[i] = args(i);
-    }
-    return sqrt(variance(A));
+    return sqrt(variance((...args)));
   }
 
   /* Standard deviation function for arrays */

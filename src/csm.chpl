@@ -259,11 +259,7 @@ module csm {
 
   /* Population standard deviation function for var args */
   proc pstdev(args...?n) {
-    var A: [1..n] real;
-    forall i in 1..n {
-      A[i] = args(i);
-    }
-    return sqrt(pvariance(A));
+    return sqrt(pvariance((...args)));
   }
 
   /* Population standard deviation function for arrays */

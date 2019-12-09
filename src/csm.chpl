@@ -100,7 +100,7 @@ module csm {
     var sum = 0.0;
     for i in 1..n do
       sum+=1.0/args(i);
-    return n/sum;
+    return n:real/sum;
   }
 
   /* Harmonic mean function for arrays */
